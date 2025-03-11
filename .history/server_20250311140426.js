@@ -12,7 +12,7 @@ const habitRoutes = require("./routes/habitRoutes");
 app.use("/habits", habitRoutes);
 
 app.get("/", (req, res) => {
-    res.redirect("/habits"); 
+    res.redirect("/habits"); // Redirect to the habits page
 });
 
 const PORT = process.env.PORT || 3000;
