@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Habit Tracker</h1>
+    <form action="/habits/add" method="POST">
+        <input type="text" name="name" placeholder="New Habit" required>
+        <button type="submit">Add Habit</button>
+    </form>
+
+    <ul>
+        <% habits.forEach(habit => { %>
+            <li>
+                <%= habit.name %> - Completed: <%= habit.completedDays %> days
+                <form action="/habits/complete/<%= habit.id %>" method="POST">
+                    <button type="submit">Mark as Completed</button>
+                </form>
+                <form action="/habits/delete/<%= habit.id %>" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
