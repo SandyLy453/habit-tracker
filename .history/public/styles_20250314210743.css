@@ -68,7 +68,7 @@ input, button {
 /* Home Page */
 .heading_section {
     text-align: left;
-    margin: 6rem 120px 4rem 120px;
+    margin: 4rem 120px;
 }
 
 .heading_section h1 {
@@ -87,7 +87,7 @@ input, button {
 .main_content {
     display: flex;
     flex-direction: row;
-    margin: 0 120px 7rem 120px;
+    margin: 0 120px 6rem 120px;
     gap: 2rem;
     text-align: left;
     align-items: flex-start;

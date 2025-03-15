@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include('../partials/header', { activePage: 'home' }) %>
+    <div class="heading_section">
+        <h1>Personal Habit Tracker</h1>
+        <p>Track your progress today for better habits.</p>
+    </div>
+
+    <section class="main_content">
+        <div class="cards_section">
+            <h3>My Habits</h3>
+            <section class="cards">
+                <div class="card">
+                    <img src="/images/running.png" alt="Running Image" />
+                    <div class="habit">
+                        <h3>Running</h3>
+                        <div class="details">
+                            <p>Times: 5</p>
+                            <p>Status: <span class="status in-progress">In Progress</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="habit">
+                        <h3>Reading</h3>
+                        <div class="details">
+                            <p>Times: 3</p>
+                            <p>Status: <span class="status done">Done</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="habit">
+                        <h3>Meditation</h3>
+                        <div class="details">
+                            <p>Times: 1</p>
+                            <p>Status: <span class="status done">Done</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="habit">
+                        <h3>Drawing</h3>
+                        <div class="details">
+                            <p>Times: 2</p>
+                            <p>Status: <span class="status done">Done</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div>
+            <h3>My Schedules</h3>
+        </div>
+    </section>
+</body>
+</html>

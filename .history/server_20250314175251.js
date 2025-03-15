@@ -25,7 +25,7 @@ db.connect()
   })
   .catch(err => {
     console.error('Database connection error:', err.stack);
-});
+  });
 
 const app = express();
 const port = 3000;

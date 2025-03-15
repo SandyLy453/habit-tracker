@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0 120px;
+}
+
+input, button {
+    margin: 5px;
+    padding: 8px;
+}
+
+/* Header */
+.header_container {
+    position: relative; /* Ensure it sits properly within the page layout */
+    width: 100%; /* Full width for the header */
+    height: auto;
+}
+
+.header_container img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Keep the aspect ratio */
+    object-fit: cover; /* Ensure the image covers the area without distorting */
+    margin: 0; /* Remove any margin if it's applied */
+    padding: 0; /* Remove padding */
+}
+
+.header {
+    display: flex;
+    flex-direction: row;  
+    justify-content:flex-end;
+    list-style: none;
+}
+
+.header_items {
+    text-decoration: none;
+    margin-right: 3rem;
+}

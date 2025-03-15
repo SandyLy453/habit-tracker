@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include('../partials/header', { activePage: 'home' }) %>
+    <div class="heading_section">
+        <h1>Personal Habit Tracker</h1>
+        <p>Track your progress today for better habits.</p>
+    </div>
+
+    <section class="main_content">
+        <div class="cards_section">
+            <h2>My Habits</h2>
+            <section class="cards">
+                <div class="card">
+                    <img src="/images/running.png" alt="Running Image" />
+                    <div class="habit">
+                        <h3>Running</h3>
+                        <div class="details">
+                            <p>Times: 5</p>
+                            <p>Status: <span class="status in-progress">In Progress</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/images/reading.png" alt="Running Image" />
+                    <div class="habit">
+                        <h3>Reading</h3>
+                        <div class="details">
+                            <p>Times: 3</p>
+                            <p>Status: <span class="status done">Done</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/images/meditation.png" alt="Running Image" />
+                    <div class="habit">
+                        <h3>Meditation</h3>
+                        <div class="details">
+                            <p>Times: 1</p>
+                            <p>Status: <span class="status done">Done</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/images/drawing.png" alt="Running Image" />
+                    <div class="habit">
+                        <h3>Drawing</h3>
+                        <div class="details">
+                            <p>Times: 2</p>
+                            <p>Status: <span class="status done">Done</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="schedules_section">
+            <h2>My Schedules</h2>
+            <div class="calendar">
+                <div class="timeline">
+                  <div class="spacer"></div>
+                  <div class="time-marker">9 AM</div>
+                  <div class="time-marker">10 AM</div>
+                  <div class="time-marker">11 AM</div>
+                  <div class="time-marker">12 PM</div>
+                  <div class="time-marker">1 PM</div>
+                  <div class="time-marker">2 PM</div>
+                  <div class="time-marker">3 PM</div>
+                  <div class="time-marker">4 PM</div>
+                  <div class="time-marker">5 PM</div>
+                  <div class="time-marker">6 PM</div>
+                </div>
+                <div class="days">
+                  <div class="day mon">
+                    <div class="date">
+                      <p class="date-day">Mon</p>
+                    </div>
+                    <div class="events">
+                      <div class="event start-2 end-5 securities">
+                        <p class="title">Reading<br><span style="font-style: italic; color: #">Harry Potter</span></p>
+                        <p class="time">2 PM - 5 PM</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="day tues">
+                    <div class="date">
+                      <p class="date-day">Tues</p>
+                    </div>
+                    <div class="events">
+                      <div class="event start-10 end-12 corp-fi">
+                        <p class="title">Corporate Finance</p>
+                        <p class="time">10 AM - 12 PM</p>
+                      </div>
+                      <div class="event start-1 end-4 ent-law">
+                        <p class="title">Entertainment Law</p>
+                        <p class="time">1PM - 4PM</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="day wed">
+                    <div class="date">
+                      <p class="date-day">Wed</p>
+                    </div>
+                    <div class="events">
+                      <div class="event start-12 end-1 writing">
+                        <p class="title">Writing Seminar</p>
+                        <p class="time">11 AM - 12 PM</p>
+                      </div>
+                      <div class="event start-2 end-5 securities">
+                        <p class="title">Securities Regulation</p>
+                        <p class="time">2 PM - 5 PM</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="day thurs">
+                    <div class="date">
+                      <p class="date-day">Thurs</p>
+                    </div>
+                    <div class="events">
+                      <div class="event start-10 end-12 corp-fi">
+                        <p class="title">Corporate Finance</p>
+                        <p class="time">10 AM - 12 PM</p>
+                      </div>
+                      <div class="event start-1 end-4 ent-law">
+                        <p class="title">Entertainment Law</p>
+                        <p class="time">1PM - 4PM</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="day fri">
+                    <div class="date">
+                      <p class="date-day">Fri</p>
+                    </div>
+                    <div class="events">
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </section>
+</body>
+</html>
