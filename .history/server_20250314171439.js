@@ -3,10 +3,6 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv'; 
 import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 dotenv.config();
 
@@ -25,7 +21,7 @@ db.connect()
   })
   .catch(err => {
     console.error('Database connection error:', err.stack);
-});
+  });
 
 const app = express();
 const port = 3000;
@@ -41,31 +37,20 @@ app.set('view engine', 'ejs');
 app.get('/', (req, res) => {
   res.render('pages/home', {
     title: "Personal Habit Tracker",
-    activePage: 'home',
     paragraph: "Track your progress today for better habits."
-  });
-});
-
-app.get('/tracker', (req, res) => {
-  res.render('pages/tracker', {
-    title: "My Habits Tracker",
-    activePage: 'tracker',
-    paragraph: " "
   });
 });
 
 app.get('/calendar', (req, res) => {
   res.render('pages/calendar', {
     title: "My Calendar",
-    activePage: 'calendar',
     paragraph: " "
   });
 });
 
 app.get('/about', (req, res) => {
   res.render('pages/about', {
-    title: "About",
-    activePage: 'about',
+    title: "About"
   });
 });
 

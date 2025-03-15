@@ -27,6 +27,11 @@ db.connect()
     console.error('Database connection error:', err.stack);
 });
 
+// Page Titles
+const pageTitle = {
+  pageheading = 
+}
+
 const app = express();
 const port = 3000;
 
