@@ -246,7 +246,7 @@ input, button {
     margin-bottom: 0.1rem;
 }
 
-.event {
+.sb {
     border: 1px solid var(--eventBorderColor);
     border-radius: 5px;
     padding: 0.5rem;
@@ -339,7 +339,7 @@ body {
     width: 100%;
 }
   
-.sb {
+.event {
     background-color: #c4b5ff;
     color: #663399;
     font-size: 0.75rem;

@@ -67,7 +67,7 @@
                 <td class="calendar-day" data-date="<%= dateCount %>">
                   <span class="date-number"><%= dateCount %></span>
                   <% if (currentMonth === 2 && dateCount === 9) { %>
-                    <div class="sb">Spring break</div>
+                    <div class="event">Spring break</div>
                   <% } %>
                 </td>
                 <% dateCount++; %>
@@ -99,9 +99,9 @@
     <!-- ========== CLIENT-SIDE SCRIPT ========== -->
     <script>
         (function(){
-          // Convert the injected values to numbers
-          const displayMonth = Number("<%= currentMonth %>");
-          const displayYear = Number("<%= currentYear %>");
+          // Embed current month and year from EJS into local constants
+          const currentMonth = <%= JSON.stringify(currentMonth) %>;
+          const currentYear = <%= JSON.stringify(currentYear) %>;
       
           const addEventBtn = document.getElementById('add-event-btn');
           const overlay = document.getElementById('add-event-overlay');
@@ -159,7 +159,7 @@
             document.getElementById('modal-description').value = "";
           });
         })();
-    </script>      
+      </script>      
 
 </body>
 </html>

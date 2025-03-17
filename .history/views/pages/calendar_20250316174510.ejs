@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Katibeh&display=swap" rel="stylesheet">
+</head>
+<body>
+  <%- include('../partials/header', { activePage: 'calendar' }) %>
+
+  <div class="calendar-container"> 
+    <div class="calendar-nav">
+      <h2 id="month-year">
+        <%= new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long', year: 'numeric' }) %>
+      </h2>
+      <div class="calendar-add">
+        <button id="add-event-btn">Add Event</button>
+      </div>
+    </div>
+    </div>
+  
+    <table class="calendar-table">
+      <thead>
+        <tr>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+          <th>Sun</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% 
+          const firstDay = new Date(currentYear, currentMonth, 1);
+          const firstDayIndex = (firstDay.getDay() + 6) % 7; // Adjust so week starts on Monday
+          const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+          let dateCount = 1;
+        
+          for (let i = 0; i < 6; i++) { %>
+          <tr>
+            <% for (let j = 0; j < 7; j++) { %>
+              <% if ((i === 0 && j < firstDayIndex) || dateCount > daysInMonth) { %>
+                <td></td>
+              <% } else { %>
+                <!-- Add data-date attribute so we know which day this cell represents -->
+                <td class="calendar-day" data-date="<%= dateCount %>">
+                  <span class="date-number"><%= dateCount %></span>
+                  <% if (currentMonth === 2 && dateCount === 9) { %>
+                    <div class="event">Spring break</div>
+                  <% } %>
+                </td>
+                <% dateCount++; %>
+              <% } %>
+            <% } %>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>  
+
+  <!-- ========== MODAL OVERLAY ========== -->
+  <div class="overlay hidden" id="add-event-overlay">
+    <div class="modal">
+      <h2>Add Event</h2>
+      <!-- Month -->
+      <label for="modal-month">Month</label>
+      <input type="text" id="modal-month" placeholder="e.g., 3 for March" />
+      
+      <!-- Date -->
+      <label for="modal-date">Date</label>
+      <input type="text" id="modal-date" placeholder="e.g., 15" />
+      
+      <!-- Event Description -->
+      <label for="modal-description">Event Description</label>
+      <input type="text" id="modal-description" placeholder="e.g., Birthday" />
+      
+      <div class="modal-buttons">
+        <button id="cancel-event-btn">Cancel</button>
+        <button id="submit-event-btn">Add</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== CLIENT-SIDE SCRIPT ========== -->
+  <script>
+    const addEventBtn = document.getElementById('add-event-btn');
+    const overlay = document.getElementById('add-event-overlay');
+    const cancelEventBtn = document.getElementById('cancel-event-btn');
+    const submitEventBtn = document.getElementById('submit-event-btn');
+
+    // Show the modal overlay
+    addEventBtn.addEventListener('click', () => {
+      overlay.classList.remove('hidden');
+    });
+
+    // Hide the modal overlay
+    cancelEventBtn.addEventListener('click', () => {
+      overlay.classList.add('hidden');
+    });
+
+    // Add event to the correct day cell
+    submitEventBtn.addEventListener('click', () => {
+      const monthInput = document.getElementById('modal-month').value.trim();
+      const dateInput = document.getElementById('modal-date').value.trim();
+      const descriptionInput = document.getElementById('modal-description').value.trim();
+
+      // Basic validation
+      if (!monthInput || !dateInput || !descriptionInput) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      const monthNumber = parseInt(monthInput, 10);
+      const dateNumber = parseInt(dateInput, 10);
+      if (isNaN(monthNumber) || isNaN(dateNumber)) {
+        alert("Invalid month or date. Please enter numeric values.");
+        return;
+      }
+
+      // Find the matching cell in the table
+      const cells = document.querySelectorAll('.calendar-day');
+      let found = false;
+      cells.forEach(cell => {
+        const cellMonth = parseInt(cell.getAttribute('data-month'), 10);
+        const cellDay = parseInt(cell.getAttribute('data-day'), 10);
+
+        // If it matches the user input
+        if (cellMonth === (monthNumber - 1) && cellDay === dateNumber) {
+          found = true;
+          // Create a new event div
+          const eventDiv = document.createElement('div');
+          eventDiv.className = 'event';
+          eventDiv.textContent = descriptionInput;
+          cell.appendChild(eventDiv);
+        }
+      });
+
+      if (!found) {
+        alert("No matching date cell found in this month's calendar.");
+      }
+
+      // Hide overlay and reset form
+      overlay.classList.add('hidden');
+      document.getElementById('modal-month').value = "";
+      document.getElementById('modal-date').value = "";
+      document.getElementById('modal-description').value = "";
+    });
+  </script>
+</body>
+</html>

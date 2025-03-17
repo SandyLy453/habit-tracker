@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include('../partials/header', { activePage: 'calendar' }) %>
+
+    <div class="calendar-container">
+        <header class="calendar-header">
+          <h1>CALENDAR</h1>
+        </header>
+      
+        <div class="calendar-nav">
+          <h2><%= new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long', year: 'numeric' }) %></h2>
+        </div>
+      
+        <table class="calendar-table">
+          <thead>
+            <tr>
+              <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% 
+              const firstDay = new Date(currentYear, currentMonth, 1);
+              const firstDayIndex = (firstDay.getDay() + 6) % 7; // Starts from Monday
+              const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+              let dateCount = 1;
+      
+              for (let i = 0; i < 6; i++) { %>
+              <tr>
+                <% for (let j = 0; j < 7; j++) { %>
+                  <td class="calendar-day">
+                    <% if ((i === 0 && j < firstDayIndex) || dateCount > daysInMonth) { %>
+                      <span></span>
+                    <% } else { %>
+                      <span class="date-number"><%= dateCount %></span>
+                      <% if (currentMonth === 2 && dateCount === 9) { %>
+                        <div class="event">Spring break</div>
+                      <% } %>
+                      <% dateCount++; %>
+                    <% } %>
+                  </td>
+                <% } %>
+              </tr>
+              <% } %>
+          </tbody>
+        </table>
+      </div>
+          
+</body>
+</html>

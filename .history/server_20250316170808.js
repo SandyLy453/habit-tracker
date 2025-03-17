@@ -55,24 +55,16 @@ app.get('/tracker', (req, res) => {
 });
 
 app.get('/calendar', (req, res) => {
-  let { month, year } = req.query;
+  const date = new Date();
 
-  // If month/year not provided, use today's date
-  if (!month || !year) {
-    const currentDate = new Date();
-    month = currentDate.getMonth();
-    year = currentDate.getFullYear();
-  } else {
-    // Convert to numbers
-    month = parseInt(month, 10);
-    year = parseInt(year, 10);
-  }
   res.render('pages/calendar', {
-    currentMonth: month,
-    currentYear: year,
+    title: "My calendar",
+    activePage: 'calendar',
+    paragraph: "",
+    currentMonth: currentDate.getMonth(),
+    currentYear: currentDate.getFullYear()  
   });
 });
-
 
 app.get('/about', (req, res) => {
   res.render('pages/about', {

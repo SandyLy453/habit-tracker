@@ -26,8 +26,6 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 0%;
-    padding-bottom: 5rem;
 }
 
 input, button {
@@ -313,9 +311,9 @@ body {
 }
   
 .calendar-table {
-    width: 90vw;
+    width: 100%;
     border-collapse: collapse;
-    margin: auto;
+    border-radius: 30px;
 }
   
 .calendar-table th {
@@ -330,7 +328,6 @@ body {
     height: 80px;
     vertical-align: top;
     padding: 8px;
-    margin: 0 5vw 5rem 5vw;
 }
   
 .date-number {
@@ -339,7 +336,7 @@ body {
     width: 100%;
 }
   
-.sb {
+.event {
     background-color: #c4b5ff;
     color: #663399;
     font-size: 0.75rem;
@@ -383,45 +380,46 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 999;
-}
+  }
   
-.hidden {
+  .hidden {
     display: none;
-}
+  }
   
-.modal {
+  .modal {
     background-color: #ffffff;
     padding: 20px 30px;
     border-radius: 12px;
-    width: 500px;
-    height: auto;
-}
+    width: 300px;
+  }
   
-.modal h2 {
+  .modal h2 {
     margin-top: 0;
     margin-bottom: 15px;
+    font-family: Arial, sans-serif;
     font-size: 1.5rem;
-}
+  }
   
-.modal label {
+  .modal label {
     display: block;
     margin-top: 10px;
-}
+    font-family: Arial, sans-serif;
+  }
   
-.modal input {
+  .modal input {
     width: 100%;
     padding: 6px;
     margin-top: 4px;
     border: 1px solid #ffd699;
     border-radius: 4px;
-}
+  }
   
-.modal-buttons {
+  .modal-buttons {
     margin-top: 20px;
     text-align: right;
-}
+  }
   
-.modal-buttons button {
+  .modal-buttons button {
     background-color: #fff4cc;
     color: #e6ac00;
     border: none;
@@ -429,15 +427,7 @@ body {
     padding: 8px 12px;
     margin-left: 10px;
     cursor: pointer;
-}
+  }
 
-.modal input {
-    width: 100%;
-}
-
-.modal label {
-    width: 100%;
-    text-align: left;
-}
 
 
