@@ -26,8 +26,6 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 0%;
-    padding-bottom: 5rem;
 }
 
 input, button {
@@ -313,9 +311,9 @@ body {
 }
   
 .calendar-table {
-    width: 90vw;
+    width: 100%;
     border-collapse: collapse;
-    margin: auto;
+    border-radius: 30px;
 }
   
 .calendar-table th {
@@ -330,7 +328,6 @@ body {
     height: 80px;
     vertical-align: top;
     padding: 8px;
-    margin: 0 5vw 5rem 5vw;
 }
   
 .date-number {
@@ -339,7 +336,7 @@ body {
     width: 100%;
 }
   
-.sb {
+.event {
     background-color: #c4b5ff;
     color: #663399;
     font-size: 0.75rem;

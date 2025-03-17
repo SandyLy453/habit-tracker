@@ -315,7 +315,7 @@ body {
 .calendar-table {
     width: 90vw;
     border-collapse: collapse;
-    margin: auto;
+    border-radius: 30px;
 }
   
 .calendar-table th {
@@ -339,7 +339,7 @@ body {
     width: 100%;
 }
   
-.sb {
+.event {
     background-color: #c4b5ff;
     color: #663399;
     font-size: 0.75rem;
