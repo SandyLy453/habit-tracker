@@ -187,7 +187,7 @@
         </div>
     </section>
 
-    <!-- JavaScript Codes - Charts and Popup Windows -->
+    <!-- JavaScript Codes -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
       let chartInstance = null;
@@ -202,8 +202,7 @@
           const ctx = document.getElementById("popupChart").getContext("2d");
 
           if (chartInstance) {
-              chartInstance.destroy(); 
-              // make sure that the previous chart is removed before creating a new one.
+              chartInstance.destroy();
           }
 
           chartInstance = new Chart(ctx, {
@@ -215,10 +214,6 @@
                       backgroundColor: ["#03a903", "#e0e0e0"],
                       borderWidth: 0
                   }]
-              },
-              options: {
-                  cutout: "70%",
-                  plugins: { legend: { display: false } }
               }
           });
       }
@@ -227,5 +222,7 @@
           document.getElementById("popup").style.display = "none";
       }
     </script>
+
+
 </body>
 </html>

@@ -223,18 +223,13 @@ input, button {
 .chart {
     width: 100%;
     max-width: 150px;
-    margin: 0;
-    padding-top: 0;
+    margin: 0 auto;
 }
 
 .chart h3 {
-    font-size: 16px;
-    margin-top: 0;
-    margin-top: -.5rem;
-}
-
-.popup_details strong {
-    font-size: 16px;
+    font-size: var(--header-large);
+    margin: 0;
+    padding: 0;
 }
 
 /* Calendar */

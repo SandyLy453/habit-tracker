@@ -187,7 +187,7 @@
         </div>
     </section>
 
-    <!-- JavaScript Codes - Charts and Popup Windows -->
+    <!-- JavaScript Codes -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
       let chartInstance = null;
@@ -202,8 +202,7 @@
           const ctx = document.getElementById("popupChart").getContext("2d");
 
           if (chartInstance) {
-              chartInstance.destroy(); 
-              // make sure that the previous chart is removed before creating a new one.
+              chartInstance.destroy();
           }
 
           chartInstance = new Chart(ctx, {
@@ -212,7 +211,7 @@
                   labels: ["Completed", "Remaining"],
                   datasets: [{
                       data: progressData,
-                      backgroundColor: ["#03a903", "#e0e0e0"],
+                      backgroundColor: ["#4CAF50", "#e0e0e0"],
                       borderWidth: 0
                   }]
               },
@@ -227,5 +226,7 @@
           document.getElementById("popup").style.display = "none";
       }
     </script>
+
+
 </body>
 </html>
