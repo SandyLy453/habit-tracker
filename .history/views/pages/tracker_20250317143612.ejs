@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head> 
+<body>
+    <%- include('../partials/header', { activePage: 'tracker' }) %>
+
+    <main class="tracker-container">
+        <h1>Habit Tracker</h1>
+        
+        <!-- Form to add a new habit -->
+        <form action="/tracker/add" method="POST" class="habit-form">
+            <input type="text" name="name" placeholder="Habit name" required>
+            <input type="text" name="description" placeholder="Description">
+            <select name="frequency">
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Monthly">Monthly</option>
+            </select>
+            <button type="submit">Add Habit</button>
+        </form>
+
+        <!-- List of habits -->
+        <ul class="habit-list">
+            <% if (habits.length > 0) { %>
+                <% habits.forEach(habit => { %>
+                    <li>
+                        <strong><%= habit.name %></strong> - <%= habit.frequency %>
+                        <p><%= habit.description %></p>
+                        <form action="/tracker/delete/<%= habit.id %>" method="POST">
+                            <button type="submit" class="delete-button">Delete</button>
+                        </form>
+                    </li>
+                <% }) %>
+            <% } else { %>
+                <p>No habits yet. Add one above!</p>
+            <% } %>
+        </ul>
+    </main>
+</body>
+</html>

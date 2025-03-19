@@ -535,53 +535,6 @@ body {
     background-color: darkred;
 }
 
-
-/* About Page */
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.about-container section {
-    margin-bottom: 2rem;
-}
-
-.about-container h1,
-.about-container h2 {
-    font-family: 'Karla', sans-serif;
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.about-container p,
-.about-container ul {
-    font-family: 'Roboto', sans-serif;
-    color: #555;
-    line-height: 1.6;
-}
-
-.about-container ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-}
-
-.about-container ul li {
-    margin-bottom: 0.5rem;
-}
-
-.about-container a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.about-container a:hover {
-    text-decoration: underline;
-}
-
 /* Footer */
 footer {
 	background-color: #f8f9fa;

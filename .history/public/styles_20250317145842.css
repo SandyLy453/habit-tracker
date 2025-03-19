@@ -443,143 +443,48 @@ body {
 /* Tracker */
 
 .tracker-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    text-align: center;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.habit-form-section h1,
-.habit-list-section h2 {
-    font-family: var(--heading-font);
-    font-weight: var(--font-styles-bold);
-    color: #333;
-    margin-bottom: 1rem;
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
 }
 
 .habit-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-bottom: 20px;
 }
 
 .habit-form input,
 .habit-form select,
 .habit-form button {
-    padding: 0.75rem;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.habit-form button {
-    background-color: var(--card-status-inProgress);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.habit-form button:hover {
-    background-color: darken(var(--card-status-inProgress), 10%);
-}
-
-.habit-list-section {
-    text-align: left;
+	padding: 10px;
+	font-size: 16px;
 }
 
 .habit-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+	list-style: none;
+	padding: 0;
 }
 
 .habit-list li {
-    background: white;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.habit-list li h3 {
-    margin: 0;
-    font-size: 1.25rem;
-    color: #333;
-}
-
-.habit-list li p {
-    margin: 0.5rem 0 0;
-    font-size: 1rem;
-    color: var(--card-paragraph);
+	background: #f8f8f8;
+	padding: 15px;
+	margin: 10px 0;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .delete-button {
-    padding: 0.5rem 1rem;
-    background-color: red;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-.delete-button:hover {
-    background-color: darkred;
-}
-
-
-/* About Page */
-.about-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.about-container section {
-    margin-bottom: 2rem;
-}
-
-.about-container h1,
-.about-container h2 {
-    font-family: 'Karla', sans-serif;
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-.about-container p,
-.about-container ul {
-    font-family: 'Roboto', sans-serif;
-    color: #555;
-    line-height: 1.6;
-}
-
-.about-container ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-}
-
-.about-container ul li {
-    margin-bottom: 0.5rem;
-}
-
-.about-container a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.about-container a:hover {
-    text-decoration: underline;
+	margin-top: 10px;
+	padding: 5px 10px;
+	background-color: red;
+	color: white;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px;
 }
 
 /* Footer */
