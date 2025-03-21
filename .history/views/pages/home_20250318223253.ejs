@@ -202,8 +202,7 @@
           const ctx = document.getElementById("popupChart").getContext("2d");
 
           if (chartInstance) {
-              chartInstance.destroy(); 
-              // make sure that the previous chart is removed before creating a new one.
+              chartInstance.destroy();
           }
 
           chartInstance = new Chart(ctx, {

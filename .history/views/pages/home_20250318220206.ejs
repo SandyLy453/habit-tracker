@@ -25,7 +25,7 @@
         <div class="cards_section">
             <h2>My Habits</h2>
             <section class="cards">
-                <div class="card" onclick="openPopup('Running', 2, [60, 40], 'Felt pretty good during my run today, my breathing was steadier than before. Still a bit exhausting, but I pushed through!', '/images/running.png')">
+                <div class="card" onclick="openPopup('Running', 2, [60, 40], )">
                     <img src="/images/running.png" alt="Running Image" />
                     <div class="habit">
                         <h3>Running</h3>
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" onclick="openPopup('Reading', 3, [80, 20], 'Picked up Harry Potter again, and I’m still captivated by the magical world. Hermione is seriously the ultimate genius!', '/images/reading.png')">
+                <div class="card" onclick="openPopup('Reading', 3, [80, 20])">
                     <img src="/images/reading.png" alt="Reading Image" />
                     <div class="habit">
                         <h3>Reading</h3>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" onclick="openPopup('Meditation', 1, [100, 0], 'Closed my eyes, listened to some calming music, and just ten minutes of meditation made a huge difference. I really need to do this more often.', '/images/meditation.png')">
+                <div class="card" onclick="openPopup('Meditation', 1, [100, 0])">
                     <img src="/images/meditation.png" alt="Meditation Image" />
                     <div class="habit">
                         <h3>Meditation</h3>
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" onclick="openPopup('Drawing', 1, [100, 0], 'Sketched something random today. Still need to refine the details, but my lines are getting more confident!', '/images/drawing.png')">
+                <div class="card" onclick="openPopup('Drawing', 1, [100, 0])">
                     <img src="/images/drawing.png" alt="Drawing Image" />
                     <div class="habit">
                         <h3>Drawing</h3>
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" onclick="openPopup('Yoga', 1, [100, 0], 'Today’s yoga session was super relaxing. Almost fell asleep during the final meditation, but I think my flexibility is improving!', '/images/yoga.png')">
+                <div class="card" onclick="openPopup('Yoga', 1, [100, 0])">
                     <img src="/images/yoga.png" alt="Yoga Image" />
                     <div class="habit">
                         <h3>Yoga</h3>
@@ -82,19 +82,11 @@
           <div class="popup_content">
               <span class="close_btn" onclick="closePopup()">&times;</span>
               <h2 id="popup_title">Habit Name</h2>
-              <img id="popup_image" src="" alt="Habit Image" />
-              <div class="popup_details">
-                <div>
-                  <h3>Description</h3>
-                  <p id="popup_description">Description</p>
-                </div>
-                <div>
-                  <p><strong>Time Spent: </strong> <span id="popup_time">0 hours</span></p>
-                  <div class="chart">
-                      <h3>Progress:</h3>
-                      <canvas id="popupChart"></canvas>
-                  </div>
-                </div>
+              <p id="popup_description">Description</p>
+              <p><strong>Time Spent: </strong> <span id="popup_time">0 hours</span></p>
+              <div class="chart">
+                  <h3>Progress:</h3>
+                  <canvas id="popupChart"></canvas>
               </div>
           </div>
         </div>
@@ -187,23 +179,21 @@
         </div>
     </section>
 
-    <!-- JavaScript Codes - Charts and Popup Windows -->
+    <!-- JavaScript Codes -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
       let chartInstance = null;
 
-      function openPopup(title, time, progressData, description, imageLink) {
+      function openPopup(title, time, progressData, description) {
           document.getElementById("popup").style.display = "flex";
           document.getElementById("popup_title").textContent = title;
           document.getElementById("popup_time").textContent = `${time} hours`;
           document.getElementById("popup_description").textContent = description;
-          document.getElementById("popup_image").src = imageLink;
 
           const ctx = document.getElementById("popupChart").getContext("2d");
 
           if (chartInstance) {
-              chartInstance.destroy(); 
-              // make sure that the previous chart is removed before creating a new one.
+              chartInstance.destroy();
           }
 
           chartInstance = new Chart(ctx, {
@@ -212,7 +202,7 @@
                   labels: ["Completed", "Remaining"],
                   datasets: [{
                       data: progressData,
-                      backgroundColor: ["#03a903", "#e0e0e0"],
+                      backgroundColor: ["#4CAF50", "#e0e0e0"],
                       borderWidth: 0
                   }]
               },
@@ -227,5 +217,7 @@
           document.getElementById("popup").style.display = "none";
       }
     </script>
+
+
 </body>
 </html>
