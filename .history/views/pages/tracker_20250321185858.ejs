@@ -48,15 +48,7 @@
 					<li>
 						<h3><%= habit.name %></h3>
 						<p>Frequency: <%= habit.frequency %></p>
-						<form
-							class="delete-form"
-							action="/delete-habit"
-							method="POST"
-							style="display: inline"
-						>
-							<input type="hidden" name="id" value="<%= habit.id %>" />
-							<button type="submit" class="delete-button">Delete</button>
-						</form>
+						<button class="delete-button">Delete</button>
 					</li>
 					<% }) %>
 				</ul>
