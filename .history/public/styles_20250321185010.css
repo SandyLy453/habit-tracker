@@ -523,12 +523,10 @@ body {
 	display: flex;
 	flex-direction: row;
 	gap: 50px;
-	align-items: flex-end;
 }
 
 .nav-link {
 	color: var(--card-status-inProgress);
-	margin-bottom: 70px;
 }
 
 .nav-link:hover {

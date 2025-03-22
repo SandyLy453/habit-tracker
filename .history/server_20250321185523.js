@@ -79,10 +79,10 @@ app.get("/calendar", (req, res) => {
 
 	if (!month || !year) {
 		const currentDate = new Date();
-		month = currentDate.getMonth(); // Months are 0-based in JS
+		month = currentDate.getMonth() + 1; // Months are 0-based in JS
 		year = currentDate.getFullYear();
 	} else {
-		month = parseInt(month, 10) -1;
+		month = parseInt(month, 10);
 		year = parseInt(year, 10);
 	}
 

@@ -528,7 +528,6 @@ body {
 
 .nav-link {
 	color: var(--card-status-inProgress);
-	margin-bottom: 70px;
 }
 
 .nav-link:hover {
