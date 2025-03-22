@@ -139,11 +139,11 @@
             const cells = document.querySelectorAll('.calendar-day');
             let found = false;
             cells.forEach(cell => {
-              const cellDay = parseInt(cell.getAttribute('data-date'), 10);
+              const cellDay = parseInt(cell.getAttribute('data-day'), 10);
               if (cellDay === dateNumber) {
                 found = true;
                 const eventDiv = document.createElement('div');
-                eventDiv.className = 'sb';
+                eventDiv.className = 'event';
                 eventDiv.textContent = descriptionInput;
                 cell.appendChild(eventDiv);
               }
