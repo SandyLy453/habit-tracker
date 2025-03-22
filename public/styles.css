@@ -631,14 +631,68 @@ body {
 
 /* About Page */
 .about-container {
-	max-width: 800px;
+	max-width: 1200px;
 	margin: 0 auto;
 	padding: 2rem 1rem;
 	background-color: #f9f9f9;
 	border-radius: 8px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: space-between;
+	/* Positions the sections */
+	gap: 3rem;
+	/* Adds space between the content and login */
 }
 
+/* Content Section (Left) */
+.about-content {
+	flex: 1;
+	/* Takes up the remaining space */
+	text-align: left;
+	/* Aligns text to the left */
+}
+
+/* Login Form Styling */
+#login {
+	width: 100%;
+	max-width: 450px;
+	max-height: 250px;
+	height: 100%;
+	padding: 1.5rem;
+	background-color: white;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	text-align: center;
+	flex-shrink: 0;
+}
+
+#login input {
+	display: block;
+	width: 96%;
+	padding: 10px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 1rem;
+}
+
+#login button {
+	width: 100%;
+	padding: 12px;
+	background-color: #e6ac00;
+	color: white;
+	font-size: 1rem;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 1rem;
+}
+
+#login button:hover {
+	background-color: #cc9900;
+}
+
+/* About Container Sections */
 .about-container section {
 	margin-bottom: 2rem;
 }
@@ -667,13 +721,17 @@ body {
 }
 
 .about-container a {
-	color: #007bff;
+	color: #cc9900;
 	text-decoration: none;
 }
 
 .about-container a:hover {
 	text-decoration: underline;
 }
+
+
+
+
 
 /* Footer */
 footer {
