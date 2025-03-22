@@ -21,11 +21,18 @@ app.use(express.static("public")); // Serve static files from the public folder
 app.set("view engine", "ejs");
 
 // Test database connection
-pool
-	.query("SELECT NOW()")
-	.then((res) => console.log("Database connected at:", res.rows[0].now))
-	.catch((err) => console.error("Database connection failed:", err));
-
+pool.connect((err, client, release) => {
+	if (err) {
+		return console.error("Error acquiring client", err.stack);
+	}
+	client.query("SELECT NOW()", (err, result) => {
+		release();
+		if (err) {
+			return console.error("Error executing query", err.stack);
+		}
+		console.log("Database connected:", result.rows);
+	});
+});
 
 // Routes tracker
 app.get("/tracker", async (req, res) => {

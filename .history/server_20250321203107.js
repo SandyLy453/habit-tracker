@@ -1,14 +1,32 @@
+import pg from "pg";
 import express from "express";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import path from "path";
-import pool from "./db.js"; // Import database connection
+import pool from "./db.js";
 import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 dotenv.config();
+
+// Database setup
+const db = new pg.Client({
+	user: process.env.DB_USER,
+	host: process.env.DB_HOST,
+	database: process.env.DB_DATABASE,
+	password: process.env.DB_PASSWORD,
+	port: process.env.DB_PORT,
+});
+
+db.connect()
+	.then(() => {
+		console.log("Connected to the database");
+	})
+	.catch((err) => {
+		console.error("Database connection error:", err.stack);
+	});
 
 const app = express();
 const port = 3000;
@@ -20,17 +38,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public")); // Serve static files from the public folder
 app.set("view engine", "ejs");
 
-// Test database connection
-pool
-	.query("SELECT NOW()")
-	.then((res) => console.log("Database connected at:", res.rows[0].now))
-	.catch((err) => console.error("Database connection failed:", err));
-
-
 // Routes tracker
 app.get("/tracker", async (req, res) => {
 	try {
-		const result = await pool.query("SELECT * FROM habits"); // Fetch habits from DB
+		const result = await db.query("SELECT * FROM habits"); // Fetch habits from DB
 		res.render("pages/tracker", {
 			title: "My Habits Tracker",
 			activePage: "tracker",
@@ -52,7 +63,7 @@ app.post("/add-habit", async (req, res) => {
 	console.log("Parsed duration:", parsedDuration);
 
 	try {
-		await pool.query(
+		await db.query(
 			"INSERT INTO habits (name, frequency, duration) VALUES ($1, $2, $3)",
 			[habitName, frequency, parsedDuration]
 		);
@@ -67,14 +78,13 @@ app.post("/add-habit", async (req, res) => {
 app.post("/delete-habit", async (req, res) => {
 	const { id } = req.body;
 	try {
-		await pool.query("DELETE FROM habits WHERE id = $1", [id]);
+		await db.query("DELETE FROM habits WHERE id = $1", [id]);
 		res.redirect("/tracker");
 	} catch (err) {
 		console.error("Error deleting habit:", err);
 		res.status(500).send("Server Error");
 	}
 });
-
 /*calendar */
 app.get("/about", (req, res) => {
 	res.render("pages/about", {
