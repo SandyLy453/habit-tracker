@@ -18,27 +18,17 @@
 		<main class="tracker-container">
 			<section class="habit-form-section">
 				<h1>Track Your Habits</h1>
-				<form class="habit-form" action="/add-habit" method="POST">
-					<input
-						type="text"
-						name="habitName"
-						placeholder="Habit Name"
-						required
-					/>
-					<select name="frequency" required>
-						<option value="" disabled selected>Select Frequency</option>
-						<option value="Daily">Daily</option>
-						<option value="Weekly">Weekly</option>
-						<option value="Monthly">Monthly</option>
-					</select>
-					<input
-						type="number"
-						name="duration"
-						placeholder="Duration (in minutes)"
-						required
-					/>
-					<button type="submit">Add Habit</button>
-				</form>
+			<form class="habit-form" action="/add-habit" method="POST">
+    <input type="text" name="habitName" placeholder="Habit Name" required>
+    <select name="frequency" required>
+        <option value="" disabled selected>Select Frequency</option>
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+    </select>
+    <input type="number" name="duration" placeholder="Duration (in minutes)" required>
+    <button type="submit">Add Habit</button>
+</form>
 			</section>
 
 			<section class="habit-list-section">
@@ -48,15 +38,7 @@
 					<li>
 						<h3><%= habit.name %></h3>
 						<p>Frequency: <%= habit.frequency %></p>
-						<form
-							class="delete-form"
-							action="/delete-habit"
-							method="POST"
-							style="display: inline"
-						>
-							<input type="hidden" name="id" value="<%= habit.id %>" />
-							<button type="submit" class="delete-button">Delete</button>
-						</form>
+						<button class="delete-button">Delete</button>
 					</li>
 					<% }) %>
 				</ul>

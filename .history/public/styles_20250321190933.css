@@ -12,12 +12,12 @@
 	--card-paragraph: #4a4a4a;
 	--card-status-done: #03a903;
 
-	--schedules-reading: #ffcf90;
-	--schedules-running: #cdc7ff;
-	--schedules-drawing: #e0f1ff;
-	--schedules-meditation: #ffdde9;
-	--event-backgroundColor: #fff7ec;
-	--schedules-yoga: #c2fcf4;
+    --schedules-reading: #FFCF90;
+    --schedules-running: #cdc7ff;
+    --schedules-drawing: #E0F1FF;
+    --schedules-meditation: #FFDDE9;
+    --event-backgroundColor: #FFF7EC;
+    --schedules-yoga: #c2fcf4;
 
 	--numDays: 5;
 	--numHours: 10;
@@ -113,11 +113,11 @@ button {
 }
 
 .cards {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	gap: 20px;
-	cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    cursor: pointer;
 }
 
 .card {
@@ -178,64 +178,64 @@ button {
 /* Card Popup */
 
 .popup {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.5);
-	justify-content: center;
-	align-items: center;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
 }
 
 .popup_content {
-	background: white;
-	padding: 20px;
-	border-radius: 8px;
-	width: 600px;
-	text-align: left;
-	position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 600px;
+    text-align: left;
+    position: relative;
 }
 
 #popup_image {
-	width: 100%;
-	height: auto;
+    width: 100%;
+    height: auto;
 }
 
 #popup_description {
-	width: 20rem;
-	margin-right: 3rem;
+    width: 20rem;
+    margin-right: 3rem;
 }
 
 .popup_details {
-	display: flex;
-	flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .close_btn {
-	position: absolute;
-	top: 10px;
-	right: 15px;
-	font-size: 24px;
-	cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .chart {
-	width: 100%;
-	max-width: 150px;
-	margin: 0;
-	padding-top: 0;
+    width: 100%;
+    max-width: 150px;
+    margin: 0;
+    padding-top: 0;
 }
 
 .chart h3 {
-	font-size: 16px;
-	margin-top: 0;
-	margin-top: -0.5rem;
+    font-size: 16px;
+    margin-top: 0;
+    margin-top: -.5rem;
 }
 
 .popup_details strong {
-	font-size: 16px;
+    font-size: 16px;
 }
 
 /* Calendar */
@@ -296,7 +296,7 @@ button {
 }
 
 .end-2 {
-	grid-row-end: 6;
+    grid-row-end: 6; 
 }
 
 .end-3 {
@@ -354,7 +354,7 @@ body {
 }
 
 .yoga {
-	background: var(--schedules-yoga);
+    background: var(--schedules-yoga);
 }
 
 .date {
@@ -518,140 +518,141 @@ body {
 /* Tracker */
 
 .tracker-container {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 2rem 1rem;
-	text-align: center;
-	background-color: #f9f9f9;
-	border-radius: 8px;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .habit-form-section h1,
 .habit-list-section h2 {
-	font-family: var(--heading-font);
-	font-weight: var(--font-styles-bold);
-	color: #333;
-	margin-bottom: 1rem;
+    font-family: var(--heading-font);
+    font-weight: var(--font-styles-bold);
+    color: #333;
+    margin-bottom: 1rem;
 }
 
 .habit-form {
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-	margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 .habit-form input,
 .habit-form select,
 .habit-form button {
-	padding: 0.75rem;
-	font-size: 1rem;
-	border: 1px solid #ddd;
-	border-radius: 4px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .habit-form button {
-	background-color: var(--card-status-inProgress);
-	color: white;
-	border: none;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
+    background-color: var(--card-status-inProgress);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .habit-form button:hover {
-	background-color: darken(var(--card-status-inProgress), 10%);
+    background-color: darken(var(--card-status-inProgress), 10%);
 }
 
 .habit-list-section {
-	text-align: left;
+    text-align: left;
 }
 
 .habit-list {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .habit-list li {
-	background: white;
-	padding: 1rem;
-	margin-bottom: 1rem;
-	border-radius: 4px;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    background: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .habit-list li h3 {
-	margin: 0;
-	font-size: 1.25rem;
-	color: #333;
+    margin: 0;
+    font-size: 1.25rem;
+    color: #333;
 }
 
 .habit-list li p {
-	margin: 0.5rem 0 0;
-	font-size: 1rem;
-	color: var(--card-paragraph);
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    color: var(--card-paragraph);
 }
 
 .delete-button {
-	background-color: red;
-	color: white;
-	border: none;
-	padding: 5px 10px;
-	cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 .delete-button:hover {
-	background-color: darkred;
+    background-color: darkred;
 }
+
 
 /* About Page */
 .about-container {
-	max-width: 800px;
-	margin: 0 auto;
-	padding: 2rem 1rem;
-	background-color: #f9f9f9;
-	border-radius: 8px;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .about-container section {
-	margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .about-container h1,
 .about-container h2 {
-	font-family: "Karla", sans-serif;
-	color: #333;
-	margin-bottom: 1rem;
+    font-family: 'Karla', sans-serif;
+    color: #333;
+    margin-bottom: 1rem;
 }
 
 .about-container p,
 .about-container ul {
-	font-family: "Roboto", sans-serif;
-	color: #555;
-	line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    color: #555;
+    line-height: 1.6;
 }
 
 .about-container ul {
-	list-style-type: disc;
-	padding-left: 1.5rem;
+    list-style-type: disc;
+    padding-left: 1.5rem;
 }
 
 .about-container ul li {
-	margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .about-container a {
-	color: #007bff;
-	text-decoration: none;
+    color: #007bff;
+    text-decoration: none;
 }
 
 .about-container a:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* Footer */

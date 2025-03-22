@@ -38,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public")); // Serve static files from the public folder
 app.set("view engine", "ejs");
 
-// Routes tracker
+// Routes
 app.get("/tracker", async (req, res) => {
 	try {
 		const result = await db.query("SELECT * FROM habits"); // Fetch habits from DB
@@ -54,13 +54,14 @@ app.get("/tracker", async (req, res) => {
 	}
 });
 
-// Route to handle form submission for adding a new habit
+// Route to handle form submission
 app.post("/add-habit", async (req, res) => {
 	const { habitName, frequency, duration } = req.body;
-	console.log("Received form data:", { habitName, frequency, duration });
+	console.log("Received form data:", { habitName, frequency, duration }); // Log received form data
 
+	// Ensure duration is parsed as an integer
 	const parsedDuration = parseInt(duration, 10);
-	console.log("Parsed duration:", parsedDuration);
+	console.log("Parsed duration:", parsedDuration); // Log parsed duration
 
 	try {
 		await db.query(
@@ -74,17 +75,7 @@ app.post("/add-habit", async (req, res) => {
 	}
 });
 
-// delete habit post
-app.post("/delete-habit", async (req, res) => {
-	const { id } = req.body;
-	try {
-		await db.query("DELETE FROM habits WHERE id = $1", [id]);
-		res.redirect("/tracker");
-	} catch (err) {
-		console.error("Error deleting habit:", err);
-		res.status(500).send("Server Error");
-	}
-});
+
 /*calendar */
 app.get("/about", (req, res) => {
 	res.render("pages/about", {

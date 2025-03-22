@@ -41,26 +41,21 @@
 				</form>
 			</section>
 
-			<section class="habit-list-section">
-				<h2>Your Habits</h2>
-				<ul class="habit-list">
-					<% habits.forEach(habit => { %>
-					<li>
-						<h3><%= habit.name %></h3>
-						<p>Frequency: <%= habit.frequency %></p>
-						<form
-							class="delete-form"
-							action="/delete-habit"
-							method="POST"
-							style="display: inline"
-						>
-							<input type="hidden" name="id" value="<%= habit.id %>" />
-							<button type="submit" class="delete-button">Delete</button>
-						</form>
-					</li>
-					<% }) %>
-				</ul>
-			</section>
+		<section class="habit-list-section">
+    <h2>Your Habits</h2>
+    <ul class="habit-list">
+        <% habits.forEach(habit => { %>
+        <li>
+            <h3><%= habit.name %></h3>
+            <p>Frequency: <%= habit.frequency %></p>
+            <form class="delete-form" action="/delete-habit" method="POST" style="display:inline;">
+                <input type="hidden" name="id" value="<%= habit.id %>">
+                <button type="submit" class="delete-button">Delete</button>
+            </form>
+        </li>
+        <% }) %>
+    </ul>
+</section>
 		</main>
 
 		<%- include('../partials/footer') %>

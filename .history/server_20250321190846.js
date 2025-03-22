@@ -57,10 +57,11 @@ app.get("/tracker", async (req, res) => {
 // Route to handle form submission for adding a new habit
 app.post("/add-habit", async (req, res) => {
 	const { habitName, frequency, duration } = req.body;
-	console.log("Received form data:", { habitName, frequency, duration });
+	console.log("Received form data:", { habitName, frequency, duration }); 
+
 
 	const parsedDuration = parseInt(duration, 10);
-	console.log("Parsed duration:", parsedDuration);
+	console.log("Parsed duration:", parsedDuration); 
 
 	try {
 		await db.query(
@@ -74,7 +75,7 @@ app.post("/add-habit", async (req, res) => {
 	}
 });
 
-// delete habit post
+// delete habit post 
 app.post("/delete-habit", async (req, res) => {
 	const { id } = req.body;
 	try {
