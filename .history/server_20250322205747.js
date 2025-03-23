@@ -74,7 +74,7 @@ app.post("/delete-habit", async (req, res) => {
 	}
 });
 
-// About page
+
 app.get("/about", (req, res) => {
 	res.render("pages/about", {
 		title: "About",
@@ -94,7 +94,6 @@ app.get("/", (req, res) => {
 	});
 });
 
-/*calendar */
 app.get("/calendar", (req, res) => {
 	let { month, year } = req.query;
 

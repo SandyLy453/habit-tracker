@@ -74,7 +74,7 @@ app.post("/delete-habit", async (req, res) => {
 	}
 });
 
-// About page
+
 app.get("/about", (req, res) => {
 	res.render("pages/about", {
 		title: "About",
