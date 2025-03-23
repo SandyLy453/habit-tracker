@@ -26,6 +26,8 @@ pool
 	.then((res) => console.log("Database connected at:", res.rows[0].now))
 	.catch((err) => console.error("Database connection failed:", err));
 
+
+	
 // Routes tracker
 app.get("/tracker", async (req, res) => {
 	try {
@@ -74,25 +76,7 @@ app.post("/delete-habit", async (req, res) => {
 	}
 });
 
-// About page
-app.get("/about", (req, res) => {
-	res.render("pages/about", {
-		title: "About",
-		activePage: "about",
-	});
-});
 
-app.listen(port, () => {
-	console.log(`App listening at port ${port}`);
-});
-
-app.get("/", (req, res) => {
-	res.render("pages/home", {
-		title: "Personal Habit Tracker",
-		activePage: "home",
-		paragraph: "Track your progress today for better habits.",
-	});
-});
 
 /*calendar */
 app.get("/calendar", (req, res) => {
